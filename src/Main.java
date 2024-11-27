@@ -2,6 +2,8 @@
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        TP03_1170_NumA.afficher();
+        TP03_1170_NumB.afficher();
+        TP03_1170_NumC.afficher();
     }
 }
