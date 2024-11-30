@@ -20,7 +20,7 @@ public class TP03_1170_NumA {
 
         PaysUtils.afficher(paysList, 0, 15);
     }
-
+    
     public static int readFilePays(String fichier, Vector<Pays> paysList) {
         int nombrePays = 0;
 
