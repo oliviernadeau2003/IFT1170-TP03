@@ -10,13 +10,6 @@ public class Pays implements Comparable<Pays> {
     private double superficie;
     private long population;
 
-    public Pays(String nom) {
-        this.continent = PaysUtils.Continent.AFRIQUE.number;
-        this.nom = nom;
-        this.capitale = "";
-        this.superficie = 0;
-        this.population = 0;
-    }
     public Pays(char continent, String nom, String capitale, double superficie, long population) {
         this.continent = continent;
         this.nom = nom;
