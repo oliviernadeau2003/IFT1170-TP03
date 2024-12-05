@@ -1,6 +1,7 @@
 //* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
 package classe;
 
+import java.util.List;
 import java.util.Vector;
 
 public class PaysUtils {
@@ -18,12 +19,12 @@ public class PaysUtils {
         }
     }
 
-    static public void afficher(Vector<Pays> pays) {
+    static public void afficher(List<Pays> pays) {
         for (int i = 0; i < pays.size(); i++)
             System.out.printf("%s - %s\n", i, pays.get(i).toString());
     }
 
-    static public void afficher(Vector<Pays> pays, int start, int end) {
+    static public void afficher(List<Pays> pays, int start, int end) {
         for (int i = start; i < end; i++)
             System.out.printf("%s - %s\n", i, pays.get(i).toString());
     }
@@ -51,6 +52,24 @@ public class PaysUtils {
 
         // 64 till the end
         long population = Long.parseLong(ligne.substring(64).trim());
+
+        return new Pays(continent, nom, capitale, superficie, population);
+    }
+
+    static public Pays createPaysNumB(String ligne) {
+        char continent = ligne.charAt(0);
+
+        // 1 to 37
+        String nom = ligne.substring(1, 36).trim();
+
+        // 36 to 55
+        String capitale = ligne.substring(36, 62).trim();
+
+        // 55 to 64
+        double superficie = Double.parseDouble(ligne.substring(62, 75).trim());
+
+        // 64 till the end
+        long population = Long.parseLong(ligne.substring(75).trim());
 
         return new Pays(continent, nom, capitale, superficie, population);
     }
