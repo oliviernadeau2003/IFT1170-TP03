@@ -9,7 +9,7 @@ public class PaysUtils {
         AMERIQUE('2'),
         ASIE('3'),
         OCEANIE('4'),
-        EUROPE('2');
+        EUROPE('5');
 
         public final char number;
 
@@ -26,6 +26,15 @@ public class PaysUtils {
     static public void afficher(Vector<Pays> pays, int start, int end) {
         for (int i = start; i < end; i++)
             System.out.printf("%s - %s\n", i, pays.get(i).toString());
+    }
+
+    public static Pays retrievePays(Vector<Pays> paysList, String nomPays) {
+        for (Pays pays : paysList) {
+            if (pays.getNom().equalsIgnoreCase(nomPays)) {
+                return pays;
+            }
+        }
+        return null;
     }
 
     static public Pays createPays(String ligne) {

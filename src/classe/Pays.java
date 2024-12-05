@@ -2,7 +2,7 @@
 package classe;
 
 
-public class Pays {
+public class Pays implements Comparable<Pays> {
 
     private char continent;
     private String nom;
@@ -10,6 +10,13 @@ public class Pays {
     private double superficie;
     private long population;
 
+    public Pays(String nom) {
+        this.continent = PaysUtils.Continent.AFRIQUE.number;
+        this.nom = nom;
+        this.capitale = "";
+        this.superficie = 0;
+        this.population = 0;
+    }
     public Pays(char continent, String nom, String capitale, double superficie, long population) {
         this.continent = continent;
         this.nom = nom;
@@ -80,6 +87,10 @@ public class Pays {
         // Cast the object to Pays and compare based on `nom`
         Pays other = (Pays) obj;
         return this.nom != null && this.nom.equalsIgnoreCase(other.nom);
+    }
+
+    public int compareTo(Pays paysAComparer)  {
+        return nom.toUpperCase().trim().compareTo(paysAComparer.nom.toUpperCase().trim());
     }
 }
 
