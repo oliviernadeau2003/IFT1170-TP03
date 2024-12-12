@@ -1,14 +1,12 @@
+//* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
 import classe.Pays;
 import classe.PaysUtils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 
-//* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
 public class TP03_1170_NumB {
     public static void main(String[] args) throws IOException {
         afficher();
