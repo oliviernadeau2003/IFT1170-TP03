@@ -41,6 +41,16 @@ public class PaysUtils {
         return null;
     }
 
+    // Retourne le premier pays égal à la capitale
+    public static Pays retrievePaysParCapital(List<Pays> paysList, String capitale) {
+        for (Pays pays : paysList) {
+            if (pays.getCapitale().equalsIgnoreCase(capitale)) {
+                return pays;
+            }
+        }
+        return null;
+    }
+
     // Crée un instance de pays basé sur le format du fichier numA
     static public Pays createPays(String ligne) {
         char continent = ligne.charAt(0);

@@ -4,6 +4,8 @@ import classe.PaysUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 //* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
@@ -22,13 +24,26 @@ public class TP03_1170_NumB {
         //System.out.println("\nAffichage des 15 premiers pays :");
         //PaysUtils.afficher(paysList);
 
-        Pays paysTemp = PaysUtils.retrievePays(paysList, "Washington");
+        // Recherche séquentielle
+        Pays paysTemp;
+        System.out.println("Pays ou la capitale est Washington :");
+        paysTemp = PaysUtils.retrievePaysParCapital(paysList, "Washington");
+        System.out.printf("%s\n", paysTemp);
 
-        paysTemp = PaysUtils.retrievePays(paysList, "Ottawa");
+        System.out.println("Pays ou la capitale est Ottawa :");
+        paysTemp = PaysUtils.retrievePaysParCapital(paysList, "Ottawa");
+        System.out.printf("%s\n", paysTemp);
 
-        paysTemp = PaysUtils.retrievePays(paysList, "Santiago");
+        System.out.println("Pays ou la capitale est Santiago :");
+        paysTemp = PaysUtils.retrievePaysParCapital(paysList, "Santiago");
+        System.out.printf("%s\n", paysTemp);
 
+        // Trier avec Collections.Sort via la capitale  (Sans overide la fonction CompareTo dans la classe)
+        paysList.sort(Comparator.comparing(Pays::getCapitale));
 
+        // Afichage des 7 premier pays de la liste
+        System.out.println("\nAffichage des 7 premiers pays :");
+        PaysUtils.afficher(paysList,0,7);
     }
 
     // Lis le fichier et  rempli la LinkedList des pays d'Amérique

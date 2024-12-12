@@ -82,6 +82,7 @@ public class Pays implements Comparable<Pays> {
         return this.nom != null && this.nom.equalsIgnoreCase(other.nom);
     }
 
+    //
     public int compareTo(Pays paysAComparer)  {
         return nom.toUpperCase().trim().compareTo(paysAComparer.nom.toUpperCase().trim());
     }

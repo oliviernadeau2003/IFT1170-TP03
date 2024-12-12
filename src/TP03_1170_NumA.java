@@ -43,9 +43,8 @@ public class TP03_1170_NumA {
         PaysUtils.afficher(paysList, 0, 20);
 
         System.out.println("\nAffichage des 15 premiers pays :");
-        Collections.sort(paysList);
+        Collections.sort(paysList); // En utilisant la fonction overide CompareTo de la classe
         PaysUtils.afficher(paysList, 0, 10);
-
 
         System.out.println("\nChercher avec BinarySearch puis afficher :");
 
