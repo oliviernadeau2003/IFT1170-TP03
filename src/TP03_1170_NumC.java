@@ -11,16 +11,16 @@ public class TP03_1170_NumC {
         final int nombre1 = 2731;
         final int nombre2 = 41376;
 
-        System.out.println("\n- Itération -");
+        System.out.println("\n- Itération -\n");
         System.out.printf("Nombre %d:\n", nombre1);
         afficherIteration(nombre1);
-        System.out.printf("Nombre %d:\n", nombre2);
+        System.out.printf("\nNombre %d:\n", nombre2);
         afficherIteration(nombre2);
 
         System.out.println("\n- Récursivité -");
         System.out.printf("Nombre %d:\n", nombre1);
         afficherRecursivite(nombre1);
-        System.out.printf("Nombre %d:\n", nombre2);
+        System.out.printf("\nNombre %d:\n", nombre2);
         afficherRecursivite(nombre2);
     }
 

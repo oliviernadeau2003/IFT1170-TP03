@@ -80,7 +80,7 @@ public class TP03_1170_NumA {
         try (BufferedReader br = new BufferedReader(new FileReader(fichier))) {
             String ligne;
             while ((ligne = br.readLine()) != null) {
-                Pays pays = PaysUtils.createPays(ligne);
+                Pays pays = PaysUtils.createPaysFromFile(ligne);
                 paysList.add(pays);
                 nombrePays++;
             }

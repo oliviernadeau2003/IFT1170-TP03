@@ -2,7 +2,6 @@
 package classe;
 
 import java.util.List;
-import java.util.Vector;
 
 public class PaysUtils {
     public enum Continent {
@@ -52,7 +51,7 @@ public class PaysUtils {
     }
 
     // Crée un instance de pays basé sur le format du fichier numA
-    static public Pays createPays(String ligne) {
+    static public Pays createPaysFromFile(String ligne) {
         char continent = ligne.charAt(0);
 
         // 1 to 36
@@ -71,7 +70,7 @@ public class PaysUtils {
     }
 
     // Créer un instance de pays basé sur le format du fichier numB
-    static public Pays createPaysNumB(String ligne) {
+    static public Pays createPaysFromFileNumB(String ligne) {
         char continent = ligne.charAt(0);
 
         // 1 to 37
