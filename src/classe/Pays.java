@@ -1,7 +1,6 @@
 //* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
 package classe;
 
-
 public class Pays implements Comparable<Pays> {
 
     private char continent;
@@ -82,7 +81,8 @@ public class Pays implements Comparable<Pays> {
         return this.nom != null && this.nom.equalsIgnoreCase(other.nom);
     }
 
-    //
+    // Comparer par nom
+    // compareTo par défaut -
     public int compareTo(Pays paysAComparer)  {
         return nom.toUpperCase().trim().compareTo(paysAComparer.nom.toUpperCase().trim());
     }

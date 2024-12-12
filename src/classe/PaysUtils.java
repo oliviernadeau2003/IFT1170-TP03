@@ -1,6 +1,8 @@
 //* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
 package classe;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PaysUtils {
@@ -48,6 +50,28 @@ public class PaysUtils {
             }
         }
         return null;
+    }
+
+    // Trier par capitale
+    public static void trierParCapitale(List<Pays> paysList) {
+        // Trier la liste par capitale
+        Comparator<Pays> comparatorByCapital = Comparator.comparing(Pays::getCapitale);
+        Collections.sort(paysList, comparatorByCapital);
+    }
+
+    // Ajouter à une liste trié
+    public static void ajouterACollectionTrierParCapitale(List<Pays> paysList, Pays pays) {
+        int index = Collections.binarySearch(paysList, pays, Comparator.comparing(Pays::getCapitale));
+
+        // Si l'index est négatif, il donne -(point d'insertion) - 1
+        if (index < 0) {
+            index = -(index + 1);
+        }
+
+        // Ajouter à l'indice calculé
+        paysList.add(index, pays);
+
+        System.out.printf("\nPays %s à été ajouté avec succès.\n", pays.getNom());
     }
 
     // Crée un instance de pays basé sur le format du fichier numA

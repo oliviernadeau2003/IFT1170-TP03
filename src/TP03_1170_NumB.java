@@ -4,6 +4,7 @@ import classe.PaysUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
@@ -43,17 +44,21 @@ public class TP03_1170_NumB {
         if (paysTemp == null) System.out.printf("Aucun pays ne correspond au critère.\n");
         else System.out.printf("%s\n", paysTemp);
 
-        // Trier avec Collections.Sort via la capitale  (Sans overide la fonction CompareTo dans la classe)
-        paysList.sort(Comparator.comparing(Pays::getCapitale));
+        // Trier avec Collections.Sort via la capitale
+        PaysUtils.trierParCapitale(paysList);
 
         // Afichage des 7 premier pays de la liste
         System.out.println("\nAffichage des 7 premiers pays :");
         PaysUtils.afficher(paysList, 0, 7);
 
         // Ajouter à la liste en gardant la liste trier
-
+        Pays chili = new Pays(PaysUtils.Continent.AMERIQUE.number, "CHILI", "SANTIAGO", 756950, 15328467);
+        // Utiliser binarySearch pour trouver l'indice d'insertion
+        PaysUtils.ajouterACollectionTrierParCapitale(paysList,chili);
 
         // Afficher tous les pays de la liste
+        System.out.println("\nAffichage de tous les pays de la liste :");
+        PaysUtils.afficher(paysList);
 
     }
 
