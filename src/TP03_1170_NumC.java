@@ -4,6 +4,7 @@ public class TP03_1170_NumC {
         afficher();
     }
 
+    // Affiche le numéro C
     public static void afficher() {
         System.out.println("\n=== Numéro C ===");
 
@@ -23,13 +24,14 @@ public class TP03_1170_NumC {
         afficherRecursivite(nombre2);
     }
 
-
+    // Fonction Ittérative
     static void afficherIteration(int nombre) {
         String nombreStr = Integer.toString(nombre);
         for (int i = 0; i < nombreStr.length(); i++)
             System.out.println(nombreStr.charAt(i));
     }
 
+    // Fonction Récursive
     static void afficherRecursivite(int nombre) {
         if (nombre < 10)
             System.out.println(nombre);

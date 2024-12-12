@@ -19,17 +19,20 @@ public class PaysUtils {
         }
     }
 
+    // Affiche la liste
     static public void afficher(List<Pays> pays) {
         for (int i = 0; i < pays.size(); i++)
             System.out.printf("%s - %s\n", i, pays.get(i).toString());
     }
 
+    // Affiche la liste à partir du start jusqu'à end
     static public void afficher(List<Pays> pays, int start, int end) {
         for (int i = start; i < end; i++)
             System.out.printf("%s - %s\n", i, pays.get(i).toString());
     }
 
-    public static Pays retrievePays(Vector<Pays> paysList, String nomPays) {
+    // Retourne le premier pays égal au nom
+    public static Pays retrievePays(List<Pays> paysList, String nomPays) {
         for (Pays pays : paysList) {
             if (pays.getNom().equalsIgnoreCase(nomPays)) {
                 return pays;
@@ -38,6 +41,7 @@ public class PaysUtils {
         return null;
     }
 
+    // Crée un instance de pays basé sur le format du fichier numA
     static public Pays createPays(String ligne) {
         char continent = ligne.charAt(0);
 
@@ -56,6 +60,7 @@ public class PaysUtils {
         return new Pays(continent, nom, capitale, superficie, population);
     }
 
+    // Créer un instance de pays basé sur le format du fichier numB
     static public Pays createPaysNumB(String ligne) {
         char continent = ligne.charAt(0);
 

@@ -13,6 +13,7 @@ public class TP03_1170_NumA {
         afficher();
     }
 
+    // Affiche le numéro A
     public static void afficher() throws IOException {
         System.out.println("\n=== Numéro A ===");
         Vector<Pays> paysList = new Vector<Pays>();
@@ -73,6 +74,7 @@ public class TP03_1170_NumA {
         System.out.printf("Chili : %s\n", paysTemp);
     }
 
+    // Lis le fichier et rempli le vector de tous les pays
     public static int readFilePays(String fichier, Vector<Pays> paysList) throws IOException {
         int nombrePays = 0;
 
